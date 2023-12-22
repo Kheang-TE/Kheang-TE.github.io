@@ -10,20 +10,93 @@
 </head>
 <body>
     <header class="header">
-        <nav class="main_navigation">
-            <ul class="main_navigation_list">
-                <li><a href="">Home</a></li>
-                <li><a href="">Gallery</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">About</a></li>
-            </ul>
-        </nav>
+        <div class="wrapper">
+            <nav class="main_navigation">
+                <ul class="main_navigation_list">
+                    <li class="main_navigation_list_item"><a href="#">A propos</a></li>
+                    <li class="main_navigation_list_item"><a href="#">Services</a></li>
+                    <li class="main_navigation_list_item"><a href="#">Réalisations</a></li>
+                    <li class="main_navigation_list_item"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="introduction">
+                <h1 class="introduction_title">Welcome to my site</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim neque vero ipsam perspiciatis excepturi ratione, sed amet, similique a necessitatibus, culpa maiores! Odio nam quasi eveniet facere, aliquid ea sequi!
+                </p>
+            </div>
+        </div>
     </header>
     <main class="main_container">
+        <section class="services">
+            <div class="wrapper">
+                <div class="card">
+                    <h2>Lorem ipsum</h2>
+                    <img src="" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                </div>
+                <div class="card">
+                    <h2>Lorem ipsum</h2>
+                    <img src="" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                </div>
+                <div class="card">
+                    <h2>Lorem ipsum</h2>
+                    <img src="" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                </div>
+                <div class="card">
+                    <h2>Lorem ipsum</h2>
+                    <img src="" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                </div>
+            </div>
+        </section>
+        <section class="realisations">
+            <div class="wrapper">
+                <header class="title_container">
+                    <h2 class="title">Réalisations</h2>
+                </header>
 
+            </div>
+        </section>
+        <section class="contact">
+            <div class="wrapper">
+                <div class="contact_infos">
+                    <h2 class="title">Nous contacter</h2>
+                    <div class="contact_infos_container">
+                        <div class="contact_infos_adress">
+                            <h3 class="subtitle">Adresse</h3>
+                            <p></p>
+                        </div>
+                        <div class="contact_infos_social">
+                            <h3 class="subtitle">Social</h3>
+                            <p></p>
+                        </div>
+                        <div class="contact_infos_email">
+                            <h3 class="subtitle">Email</h3>
+                            <p></p>
+                        </div>
+                        <div class="contact_infos_phone">
+                            <h3 class="subtitle">Téléphone</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact_form">
+                    <h2 class="title">Nous laisser un message</h2>
+                    <form action="">
+                        <span><input type="text" name="name" placeholder="NOM Prénom"></span>
+                        <span><input type="email" name="email" placeholder="Email"></span>
+                        <textarea name="message" placeholder="Votre message"></textarea>
+                        <button type="submit" class="contact_form_btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-
-    </footer class="footer">
+    <footer class="footer">
+        &copy; 2023 - Tous droits réversé - Mentions légales - Protections des données personnels
+    </footer>
 </body>
 </html>
