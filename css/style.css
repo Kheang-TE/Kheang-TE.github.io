@@ -1,0 +1,24 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    display: grid;
+    grid-template-rows: [header] 1fr [main] 1fr [footer] 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    
+}
+.header{
+    grid-area: header;
+    background-color: darkcyan;
+}
+.main_container{
+    grid-area: main;
+    background-color: cornflowerblue;
+}
+.footer{
+    grid-area: footer;
+    background-color: darkblue;
+}
