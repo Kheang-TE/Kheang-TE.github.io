@@ -4,7 +4,7 @@
     --firstcolor: #5e9c89;
     --firstcolor-light: #7abfbc;
     --firstcolor-dark: #4c7f6a;
-    
+
     --gutter: .8rem;
 
     --shadow: 0 0 5 #6fb5a9;
@@ -13,6 +13,68 @@ html{
     font-size: 62.5%;
 }
 body{
-    background-color: var(--firstcolor);
+    background-color: var(--firstcolor-light);
+    font-family: 'Raleway', sans-serif;
     font-size: 1.4rem;
+}
+header{
+    height: 100vh;
+    position: relative;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+/* Menu principal */
+.main_navigation{
+    text-align: center;
+    /* background-color: var(--firstcolor-light);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 3rem 0;
+    z-index: 10; */
+}
+.main_navigation_list{
+    list-style: none;
+    border: 1px solid var(--lightest);
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.main_navigation_item{
+    display: inline-block;
+}
+.main_navigation_link{
+    color: var(--lightest);
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    margin-right: 1rem;
+}
+.main_navigation_link:last-child{
+    margin-right: 0;
+}
+.main_navigation_link:hover{
+    color:var(--firstcolor-dark);
+    transition: all linear 300ms;
+}
+
+/* Header : Introduction */
+.introduction{
+    text-align: center;
+    color: var(--lightest);
+    max-width: 50rem;
+    position: absolute;
+    bottom: 15%;
+    left: calc(50% - 25rem);
+}
+.introduction_title{
+    margin-bottom: 3.2rem;
 }
