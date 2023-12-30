@@ -8,7 +8,7 @@
 
     --gutter: .8rem;
 
-    --shadow: 0 0 5 #6fb5a9;
+    --transition: all linear 300ms;
 }
 html{
     font-size: 62.5%;
@@ -26,6 +26,13 @@ header{
     width: 90%;
     margin: 0 auto;
     padding: 3rem 0;
+}
+.title{
+    text-transform: uppercase;
+    margin-bottom: 3.2rem;
+}
+.subtitle{
+    margin: 2rem;
 }
 
 /* Menu principal */
@@ -58,13 +65,14 @@ header{
     display: block;
     padding: 1.5rem 3rem;
     margin-right: 1rem;
+    opacity: .5;
 }
 .main_navigation_link:last-child{
     margin-right: 0;
 }
 .main_navigation_link:hover{
-    color:var(--primarycolor-dark);
-    transition: all linear 300ms;
+    opacity: 1;
+    transition: var(--transition);
 }
 
 /* Header : Introduction */
@@ -102,7 +110,68 @@ header{
     text-transform: uppercase;
     margin-bottom: 1.6rem;
 }
+/* Contact */
+/* Contact - infos */
+.contact_container{
+    color: var(--lightest);
+    display: flex;
+}
+.contact_infos,.contact_form{
+    width: 50%;
+}
+.contact_infos_container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.contact_infos_data{
+    width: 50%;
+}
+/* Contact - form */
+.contact_form_container{
+    display: flex;
+    flex-flow: column wrap;
+}
+.contact_form_container > div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    column-gap: 1.6rem;
+}
+.contact_form_container span{
+    width: calc(50% - .8rem);
+}
+input,textarea,.contact_form_btn{
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+}
+input,textarea{
+    background-color: rgba(255,255,255,.2);
+    color: var(--lightest);
+    padding: 1rem;
+    margin-bottom: 1.6rem;
+    border: 1px solid var(--lightest);
+    box-shadow: none;
+}
+input:focus-visible,textarea:focus-visible{
+    outline: 2px solid var(--primarycolor-light);
+}
+.contact_form_btn{
+    background-color: var(--primarycolor-dark);
+    color: var(--lightest);
+    box-shadow: none;
+    border: 1px solid var(--lightest);
+    padding: 1rem;
+    cursor: pointer;
+}
+.contact_form_btn:hover{
+    background-color: var(--primarycolor-light);
+    transition: var(--transition);
+}
 /* Footer */
 .footer{
+    color: var(--lightest);
     text-align: center;
 }
