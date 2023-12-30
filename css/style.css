@@ -1,9 +1,10 @@
 :root{
     --lightest: #fff;
     --darkest: #000;
-    --firstcolor: #5e9c89;
-    --firstcolor-light: #7abfbc;
-    --firstcolor-dark: #4c7f6a;
+    --grey: #999;
+    --primarycolor: #5e9c89;
+    --primarycolor-light: #7abfbc;
+    --primarycolor-dark: #4c7f6a;
 
     --gutter: .8rem;
 
@@ -13,7 +14,7 @@ html{
     font-size: 62.5%;
 }
 body{
-    background-color: var(--firstcolor-light);
+    background-color: var(--primarycolor);
     font-family: 'Raleway', sans-serif;
     font-size: 1.4rem;
 }
@@ -30,7 +31,7 @@ header{
 /* Menu principal */
 .main_navigation{
     text-align: center;
-    /* background-color: var(--firstcolor-light);
+    /* background-color: var(--primarycolor-light);
     position: fixed;
     width: 100%;
     top: 0;
@@ -62,7 +63,7 @@ header{
     margin-right: 0;
 }
 .main_navigation_link:hover{
-    color:var(--firstcolor-dark);
+    color:var(--primarycolor-dark);
     transition: all linear 300ms;
 }
 
@@ -76,5 +77,32 @@ header{
     left: calc(50% - 25rem);
 }
 .introduction_title{
+    text-transform: uppercase;
     margin-bottom: 3.2rem;
+}
+
+/* Service */
+.services{
+    background-color: var(--lightest);
+}
+.services_container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+}
+.service_card{
+    color: var(--grey);
+    width: 50%;
+    padding: 1.6rem;
+}
+.service_title{
+    color: var(--primarycolor-dark);
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+}
+/* Footer */
+.footer{
+    text-align: center;
 }
