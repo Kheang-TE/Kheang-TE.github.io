@@ -149,7 +149,10 @@ header{
     display: flex;
 }
 .contact_info_content{
-    padding: .8rem;
+    padding: .8rem 1rem 1.6rem;
+}
+.contact_info_content .subtitle{
+    margin-bottom: 1rem;
 }
 .contact_info_side{
     order: -1;
