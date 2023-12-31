@@ -2,9 +2,9 @@
     --lightest: #fff;
     --darkest: #000;
     --grey: #999;
-    --primarycolor: #5e9c89;
-    --primarycolor-light: #7abfbc;
-    --primarycolor-dark: #4c7f6a;
+    --primarycolor: #6facb1;
+    --primarycolor-light: #93c1c4;
+    --primarycolor-dark: #458e95;
 
     --gutter: .8rem;
 
@@ -14,9 +14,10 @@ html{
     font-size: 62.5%;
 }
 body{
-    background-color: var(--primarycolor);
+    background: url('../img/background.jpg') var(--primarycolor);
     font-family: 'Raleway', sans-serif;
     font-size: 1.4rem;
+    color: var(--grey);
 }
 header{
     height: 100vh;
@@ -28,7 +29,7 @@ address{
 .wrapper{
     width: 90%;
     margin: 0 auto;
-    padding: 3rem 0;
+    padding: calc(var(--gutter)*6) 0;
 }
 .title{
     text-transform: uppercase;
@@ -117,7 +118,6 @@ address{
     align-content: center;
 }
 .service_card{
-    color: var(--grey);
     width: 50%;
     padding: 1.6rem;
     display: flex;
@@ -152,6 +152,7 @@ address{
 .realisations_title{
     color: var(--primarycolor-dark);
     text-align: center;
+    font-size: 2.4rem;
 }
 .realisations_container{
     display: flex;
@@ -169,6 +170,7 @@ address{
     margin-bottom: 2rem;;
 }
 .realisation_content .subtitle{
+    color: var(--primarycolor-dark);
     margin-bottom: 1rem;
 }
 .realisation_content .more_btn{
@@ -180,7 +182,9 @@ address{
     font-size: 1.6rem;
 }
 /* Contact */
-/* Contact - infos */
+.contact{
+    background-color: var(--primarycolor);
+}
 .contact_container{
     color: var(--lightest);
     display: flex;
@@ -188,6 +192,7 @@ address{
 .contact_infos,.contact_form{
     width: 50%;
 }
+/* Contact - infos */
 .contact_infos_container{
     display: flex;
     flex-flow: row wrap;
@@ -263,6 +268,7 @@ input:focus-visible,textarea:focus-visible{
 }
 /* Footer */
 .footer{
+    background-color: var(--primarycolor);
     color: var(--lightest);
     text-align: center;
 }
