@@ -7,6 +7,7 @@
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/fontawesome/css/all.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -29,6 +30,7 @@
                 </ul>
             </nav>
             <div class="introduction">
+                <i class="fa-solid fa-code"></i>
                 <h1 class="introduction_title">Welcome to my site</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim neque vero ipsam perspiciatis excepturi ratione, sed amet, similique a necessitatibus, culpa maiores! Odio nam quasi eveniet facere, aliquid ea sequi!
@@ -41,24 +43,60 @@
             <div class="wrapper">
                 <div class="services_container">
                     <div class="service_card">
-                        <h2 class="service_title">Lorem ipsum</h2>
-                        <img src="" alt="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                        <div class="service_card_content">
+                            <h2 class="service_title">Lorem ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                        </div>
+                        <div class="service_card_side">
+                            <div class="service_card_icon">
+                                <i class="fa-brands fa-html5"></i>
+                            </div>
+                            <div class="service_card_icon">
+                                <i class="fa-brands fa-css3"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="service_card">
-                        <h2 class="service_title">Lorem ipsum</h2>
-                        <img src="" alt="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                        <div class="service_card_content">
+                            <h2 class="service_title">Lorem ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                        </div>
+                        <div class="service_card_side">
+                            <div class="service_card_icon">
+                                <i class="fa-brands fa-react"></i>
+                            </div>
+                            <div class="service_card_icon">
+                                <i class="fa-brands fa-node-js"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="service_card">
-                        <h2 class="service_title">Lorem ipsum</h2>
-                        <img src="" alt="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                        <div class="service_card_content">
+                            <h2 class="service_title">Lorem ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                        </div>
+                        <div class="service_card_side">
+                            <div class="service_card_icon">
+                                <i class="fa-brands fa-wordpress"></i>
+                            </div>
+                            <div class="service_card_icon">
+                                <i class="fa-brands fa-php"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="service_card">
-                        <h2 class="service_title">Lorem ipsum</h2>
-                        <img src="" alt="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                        <div class="service_card_content">
+                            <h2 class="service_title">Lorem ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio deserunt illo quos. Quis vero reprehenderit suscipit, earum praesentium neque!</p>
+                        </div>
+                        <div class="service_card_side">
+                            <div class="service_card_icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="service_card_icon">
+                                <i class="fa-solid fa-pen-ruler"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,21 +117,49 @@
                     <div class="contact_infos">
                         <h2 class="title">Nous contacter</h2>
                         <div class="contact_infos_container">
-                            <div class="contact_infos_data contact_infos_data-adress">
-                                <h3 class="subtitle">Adresse</h3>
-                                <p></p>
+                            <div class="contact_info contact_info-adress">
+                                <div class="contact_info_content">
+                                    <h3 class="subtitle">Adresse</h3>
+                                    <p></p>
+                                </div>
+                                <div class="contact_info_side">
+                                    <div class="contact_info_icon">
+                                        <i class="fa-solid fa-map-location-dot"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="contact_infos_data contact_infos_data-social">
-                                <h3 class="subtitle">Social</h3>
-                                <p></p>
+                            <div class="contact_info contact_info-social">
+                                <div class="contact_info_content">
+                                    <h3 class="subtitle">Social</h3>
+                                    <p></p>
+                                </div>
+                                <div class="contact_info_side">
+                                    <div class="contact_info_icon">
+                                        <i class="fa-regular fa-message"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="contact_infos_data contact_infos_data-email">
-                                <h3 class="subtitle">Email</h3>
-                                <p></p>
+                            <div class="contact_info contact_info-email">
+                                <div class="contact_info_content">
+                                    <h3 class="subtitle">Email</h3>
+                                    <p></p>
+                                </div>
+                                <div class="contact_info_side">
+                                    <div class="contact_info_icon">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="contact_infos_data contact_infos_data-phone">
-                                <h3 class="subtitle">Téléphone</h3>
-                                <p></p>
+                            <div class="contact_info contact_info-phone">
+                                <div class="contact_info_content">
+                                    <h3 class="subtitle">Téléphone</h3>
+                                    <p></p>
+                                </div>
+                                <div class="contact_info_side">
+                                    <div class="contact_info_icon">
+                                        <i class="fa-solid fa-mobile-screen"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
