@@ -1,0 +1,9 @@
+@use '../../../assets/css/variables.scss' as *;
+
+footer.footer{
+    color: $light-font-color;
+    text-align: center;
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
