@@ -1,7 +1,9 @@
 function Works() {
   return (
     <section id="works" className="backgroundColor">
-      <h1>Mes Réalisations</h1>
+      <div className="title-container">
+        <h1 className="title-content">Mes Réalisations</h1>
+      </div>
     </section>
   );
 }

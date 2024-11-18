@@ -2,7 +2,9 @@ function About() {
   return (
     <section id="about">
       <div className="container">
-        <h1>A propos</h1>
+        <div className="title-container">
+          <h1 className="title-content">A propos</h1>
+        </div>
         <p>This is the about page.</p>
       </div>
     </section>
