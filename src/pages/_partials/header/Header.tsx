@@ -1,6 +1,6 @@
 import MenuItem from "../../../components/MenuItem/MenuItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faHouse, faUser, faBriefcase, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {faHouse, faUser, faBriefcase, faDesktop, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../footer/Footer";
 import "./Header.scss";
 import { MouseEvent } from "react";
@@ -20,12 +20,18 @@ const menu = [
     },
     {
         id: 3,
-        title: "Réalisations",
-        link: "#works",
+        title: "Compétences",
+        link: "#skills",
         icon: <i><FontAwesomeIcon icon={faBriefcase} /></i>
     },
     {
         id: 4,
+        title: "Réalisations",
+        link: "#works",
+        icon: <i><FontAwesomeIcon icon={faDesktop} /></i>
+    },
+    {
+        id: 5,
         title: "Contact",
         link: "#contact",
         icon: <i><FontAwesomeIcon icon={faEnvelope} /></i>

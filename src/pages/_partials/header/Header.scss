@@ -57,13 +57,13 @@ header{
         position: fixed;
         top: 0;
         left: 0;
-        width: 30rem;
+        width: 25rem;
         height: 100vh;
         background-color: $primary-color;
-        box-shadow: $box-shadow-right;
+        box-shadow: $shadow;
         z-index: 1;
         transition: $transition;
-        transform: translateX(-30rem);
+        transform: translateX(-25rem);
         &:before{
             content: '';
             position: absolute;
@@ -150,7 +150,7 @@ header{
         flex-direction: column;
         justify-content: space-around;
         height: 100vh;
-        width: 30rem;
+        width: 25rem;
         position: fixed;
         top: 0;
         left: 0;

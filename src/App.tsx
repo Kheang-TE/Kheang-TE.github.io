@@ -1,17 +1,14 @@
 import "./App.scss"
 import Header from "./pages/_partials/header/Header"
-import About from "./pages/about/About"
-import Contact from "./pages/contact/Contact"
-import Home from "./pages/home/Home"
-import Works from "./pages/works/Works"
+import { About, Contact, Home, Skills, Works } from "./pages"
 
 function App() {
-
   return <>
     <Header />
     <main>
       <Home />
       <About />
+      <Skills />
       <Works />
       <Contact />
     </main>
