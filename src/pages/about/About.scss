@@ -80,11 +80,12 @@
         .content{
             flex-direction: row;
             .content-text{
-                margin-left: 2rem;
+                margin-right: 2rem;
             }
             .content-image{
                 height: auto;
                 margin-bottom: 0;
+                order: 2;
             }
         }
     }
@@ -102,6 +103,7 @@
                 background: rgba($background-color, .75);
                 width: calc(100% - 35rem);
                 padding: 2rem;
+                margin-right: 0;
                 &:before{
                     content: '';
                     position: absolute;
