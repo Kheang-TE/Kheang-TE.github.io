@@ -1,0 +1,90 @@
+@use '../../assets/css/variables.scss' as *;
+
+section#skills{
+    .container-content{
+        position: relative;
+        min-height: calc(100vh - 15rem);
+    }
+}
+
+.tabs{
+    display: flex;
+    flex-direction: column;
+    .tabs-panel{
+        button{
+            font-size: 2rem;
+            font-weight: 700;
+            padding: 2rem;
+            border: none;
+            border-right: 1px solid #ccc;
+            &:last-child{border-right: none;}
+            &:hover, &.active{
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+    }
+    .tabs-content{
+        background-color: white;
+        width: 100%;
+        padding: 2rem;
+        border: .2rem solid $primary-color;
+        position: relative;
+        & > div{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            background-color: $primary-color;
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                calc(100% - 1rem) 1rem,
+                1rem 1rem,
+                1rem calc(100% - 1rem),
+                0 100%
+            );
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 50%;
+            background-color: $primary-color;
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                calc(100% - 1rem) 1rem,
+                1rem 1rem,
+                1rem calc(100% - 1rem),
+                0 100%
+            );
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .tabs{
+        flex-direction: row;
+        .tabs-panel{
+            button{
+                display: block;
+                width: 25rem;
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+                &:last-child{border-bottom: none;}
+            }
+        }
+    }
+}

@@ -1,180 +1,190 @@
 @use '../../assets/css/variables.scss' as *;
 
-.container-content{
-    .content{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: rgba($background-color, .75);
-        padding: 2rem;
-        position: relative;
-        &:before{
-            content: '';
-            position: absolute;
-            top: -2rem;
-            left: 0;
-            width: 100%;
-            height: 2rem;
-            background-color: $secondary-color;
-            clip-path: polygon(
-                0 0,
-                30% 0,
-                calc(30% + 2rem) 1.25rem,
-                100% 1.25rem,
-                100% 100%,
-                0 100%
-            );
-        }
-        &:after{
-            content: '';
-            position: absolute;
-            bottom: -2rem;
-            left: 0;
-            width: 100%;
-            height: 2rem;
-            background-color: $secondary-color;
-            clip-path: polygon(
-                0 0,
-                30% 0,
-                calc(30% + 2rem) 1.25rem,
-                100% 1.25rem,
-                100% 100%,
-                0 100%
-            );
-            transform: rotate(180deg);
-        }
-        .content-text{
+section#about{
+    .container-content{
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba($background-color, .75);
+            padding: 2rem;
             position: relative;
-            color: white;
-            width: 100%;
-            p{
-                margin-bottom: 2rem;
-            }
-            
-        }
-        .content-image{
-            max-width: 35rem;
-            height: 35rem;
-            overflow: hidden;
-            margin-bottom: 2rem;
             &:before{
                 content: '';
                 position: absolute;
-                top: 0;
+                top: -2rem;
                 left: 0;
                 width: 100%;
-                height: 100%;
-                background-color: $background-color;
-                opacity: .3;
-                z-index: 1;
+                height: 2rem;
+                background-color: $secondary-color;
+                clip-path: polygon(
+                    0 0,
+                    30% 0,
+                    calc(30% + 2rem) 1.25rem,
+                    100% 1.25rem,
+                    100% 100%,
+                    0 100%
+                );
             }
-            img{
-                filter: grayscale(1);
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: -2rem;
+                left: 0;
+                width: 100%;
+                height: 2rem;
+                background-color: $secondary-color;
+                clip-path: polygon(
+                    0 0,
+                    30% 0,
+                    calc(30% + 2rem) 1.25rem,
+                    100% 1.25rem,
+                    100% 100%,
+                    0 100%
+                );
+                transform: rotate(180deg);
+            }
+            .content-text{
+                position: relative;
+                color: white;
+                width: 100%;
+                p{
+                    margin-bottom: 2rem;
+                }
+                
+            }
+            .content-image{
+                max-width: 35rem;
+                height: 35rem;
+                overflow: hidden;
+                margin-bottom: 2rem;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $background-color;
+                    opacity: .3;
+                    z-index: 1;
+                }
+                img{
+                    filter: grayscale(1);
+                }
             }
         }
     }
 }
 
+
 @media (min-width: 768px){
-    .container-content{
-        .content{
-            flex-direction: row;
-            .content-text{
-                margin-right: 2rem;
-            }
-            .content-image{
-                height: auto;
-                margin-bottom: 0;
-                order: 2;
+    section#about{
+        .container-content{
+            .content{
+                flex-direction: row;
+                .content-text{
+                    margin-right: 2rem;
+                }
+                .content-image{
+                    max-width: 25rem;
+                    height: auto;
+                    margin-bottom: 0;
+                    order: 2;
+                }
             }
         }
     }
+    
 }
 
 @media (min-width: 1200px){
-    .container-content{
-        .content{
-            background: none;
-            align-items: center;
-            &:before, &:after{
-                display: none;
-            }
-            .content-text{
-                background: rgba($background-color, .75);
-                width: calc(100% - 35rem);
-                padding: 2rem;
-                margin-right: 0;
-                &:before{
-                    content: '';
-                    position: absolute;
-                    top: -2rem;
-                    left: 0;
-                    width: 100%;
-                    height: 2rem;
-                    background-color: $secondary-color;
-                    clip-path: polygon(
-                        0 0,
-                        30% 0,
-                        calc(30% + 2rem) 1.25rem,
-                        100% 1.25rem,
-                        100% 100%,
-                        0 100%
-                    );
+    section#about{
+        .container-content{
+            .content{
+                background: none;
+                align-items: center;
+                &:before, &:after{
+                    display: none;
                 }
-                &:after{
-                    content: '';
-                    position: absolute;
-                    bottom: -2rem;
-                    left: 0;
-                    width: 100%;
-                    height: 2rem;
-                    background-color: $secondary-color;
-                    clip-path: polygon(
-                        0 0,
-                        30% 0,
-                        calc(30% + 2rem) 1.25rem,
-                        100% 1.25rem,
-                        100% 100%,
-                        0 100%
-                    );
-                    transform: rotate(180deg);
+                .content-text{
+                    background: rgba($background-color, .75);
+                    width: calc(100% - 35rem);
+                    padding: 2rem;
+                    margin-right: 0;
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: -2rem;
+                        left: 0;
+                        width: 100%;
+                        height: 2rem;
+                        background-color: $secondary-color;
+                        clip-path: polygon(
+                            0 0,
+                            30% 0,
+                            calc(30% + 2rem) 1.25rem,
+                            100% 1.25rem,
+                            100% 100%,
+                            0 100%
+                        );
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        bottom: -2rem;
+                        left: 0;
+                        width: 100%;
+                        height: 2rem;
+                        background-color: $secondary-color;
+                        clip-path: polygon(
+                            0 0,
+                            30% 0,
+                            calc(30% + 2rem) 1.25rem,
+                            100% 1.25rem,
+                            100% 100%,
+                            0 100%
+                        );
+                        transform: rotate(180deg);
+                    }
                 }
-            }
-            .content-image{
-                position: relative;
-                width: 35rem;
-                height: auto;
-                overflow: hidden;
-                padding: 0;
-                filter: drop-shadow($shadow);
-                &:before{
-                    clip-path: polygon(
-                        0 2rem,
-                        30% 2rem,
-                        calc(30% + 2rem) 0,
-                        100% 0,
-                        100% calc(100% - 2rem),
-                        70% calc(100% - 2rem),
-                        65% 100%,
-                        0 100%
-                    );
-                }
-                img{
+                .content-image{
                     position: relative;
-                    width: 100%;
+                    max-width: 35rem;
                     height: auto;
-                    clip-path: polygon(
-                        0 2rem,
-                        30% 2rem,
-                        calc(30% + 2rem) 0,
-                        100% 0,
-                        100% calc(100% - 2rem),
-                        70% calc(100% - 2rem),
-                        65% 100%,
-                        0 100%
-                    );
+                    overflow: hidden;
+                    padding: 0;
+                    filter: drop-shadow($shadow);
+                    &:before{
+                        clip-path: polygon(
+                            0 2rem,
+                            30% 2rem,
+                            calc(30% + 2rem) 0,
+                            100% 0,
+                            100% calc(100% - 2rem),
+                            70% calc(100% - 2rem),
+                            65% 100%,
+                            0 100%
+                        );
+                    }
+                    img{
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        clip-path: polygon(
+                            0 2rem,
+                            30% 2rem,
+                            calc(30% + 2rem) 0,
+                            100% 0,
+                            100% calc(100% - 2rem),
+                            70% calc(100% - 2rem),
+                            65% 100%,
+                            0 100%
+                        );
+                    }
                 }
             }
         }
     }
+    
 }
