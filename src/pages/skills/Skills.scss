@@ -1,6 +1,7 @@
 @use '../../assets/css/variables.scss' as *;
 
 section#skills{
+    min-height: auto;
     .container-content{
         position: relative;
     }
@@ -16,6 +17,7 @@ section#skills{
             padding: 2rem;
             border: none;
             border-right: 1px solid #ccc;
+            transition: $transition;
             &:last-child{border-right: none;}
             &:hover, &.active{
                 background-color: $primary-color;
@@ -31,6 +33,7 @@ section#skills{
         position: relative;
         & > div{
             display: none;
+            transition: $transition;
             &.active{
                 display: block;
             }

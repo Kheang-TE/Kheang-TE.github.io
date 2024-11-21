@@ -3,7 +3,7 @@ import Contact from './contact/Contact.tsx'
 import Divider from './_partials/divider/Divider.tsx'
 import Home from './home/Home.tsx'
 import Skills from './skills/Skills.tsx'
-import Works from './works/Works.tsx'
+import Projects from './projects/Projects.tsx'
 
 export {
     About,
@@ -11,5 +11,5 @@ export {
     Divider,
     Home,
     Skills,
-    Works
+    Projects
 }

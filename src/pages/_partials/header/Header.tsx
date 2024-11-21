@@ -26,8 +26,8 @@ const menu = [
     },
     {
         id: 4,
-        title: "Réalisations",
-        link: "#works",
+        title: "Projets",
+        link: "#projects",
         icon: <i><FontAwesomeIcon icon={faDesktop} /></i>
     },
     {

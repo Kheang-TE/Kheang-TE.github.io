@@ -1,6 +1,6 @@
 import "./App.scss"
 import Header from "./pages/_partials/header/Header"
-import { About, Contact, Divider, Home, Skills, Works } from "./pages"
+import { About, Contact, Divider, Home, Skills, Projects } from "./pages"
 
 function App() {
   return <>
@@ -10,7 +10,7 @@ function App() {
       <About />
       <Skills />
       <Divider />
-      <Works />
+      <Projects />
       <Contact />
     </main>
   </>
