@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Joie d'une Vie Saine",
+    "image": "./img/projets/jdvs.png",
+    "description": "Site vitrine responsive d'un magasin bio avec présentation de produit sous forme de catalogue. Le site est réalisé avec Wordpress et un thème totalement personnalisé. Le site est également optimisé pour le référencement naturel.",
+    "stacks": ["Wordpress", "PHP", "CSS"],
+    "status": "online",
+    "url":  "https://joieduneviesaine.com/"
+  },
+  {
+      "title": "GT Habitat",
+      "image": "./img/projets/gt_habitat.png",
+      "description": "Site vitrine d'un maître d'oeuvre. Le site est réalisé avec Wordpress et un thème totalement personnalisé. Le site est également optimisé pour le référencement naturel.",
+      "stacks": ["Wordpress", "PHP", "CSS"],
+      "status": "online",
+      "url":  "https://gt-habitat.fr/"
+    },
+    {
+      "title": "Unity Manager",
+      "image": "./img/projets/unity_manager.png",
+      "description": "Application de gestion de projet. Il permet de gérer les projets sous forme de tâches, modèle Kanban. Un système de tchat est également intégré pour faciliter la communication entre les membres de l'équipe.",
+      "stacks": ["NodeJS", "Express", "PostgreSQL", "MongoDB", "VueJS", "Bootstrap", "CSS"],
+      "status": "done",
+      "url": [
+        {
+          "url_name": "Front-end",
+          "url_link": "https://github.com/Kheang-TE/unity_manager-front"
+        },
+        {
+          "url_name": "Back-end",
+          "url_link": "https://github.com/Kheang-TE/unity_manager-back"
+        }
+      ]
+    },
+    {
+      "title": "Sarang",
+      "image": "./img/projets/sarang.png",
+      "description": "Application de notation de films ou séries asiatiques, avec la possibilité de les commenter.",
+      "stacks":["NodeJS", "NestJS", "PostgreSQL", "Angular", "Bootstrap", "Sass"],
+      "status": "in_progress",
+      "url": null
+    }
+]

@@ -18,6 +18,13 @@ section#skills{
             border: none;
             border-right: 1px solid #ccc;
             transition: $transition;
+            clip-path: polygon(
+                0 1em,
+                1em 0,
+                100% 0,
+                100% 100%,
+                0 100%
+            );
             &:last-child{border-right: none;}
             &:hover, &.active{
                 background-color: $primary-color;

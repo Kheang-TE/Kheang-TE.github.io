@@ -1,0 +1,253 @@
+@use '../../assets/css/variables.scss' as *;
+
+section#projects{
+    .container-content{
+        position: relative;
+        padding: 8rem 0;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 30vh);
+            width: 60vh;
+            height: 100%;
+            background-color: $secondary-color;
+            z-index: -1;
+            mask-image: linear-gradient(to bottom, transparent 0, white 10%, white 90%, transparent 100%);
+        }
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 25vh);
+            width: 50vh;
+            height: 100%;
+            background-color: $primary-color;
+            border-left: .5rem solid white;
+            border-right: .5rem solid white;
+            z-index: -1;
+            mask-image: linear-gradient(to bottom, transparent 0, white 10%, white 90%, transparent 100%);
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            .project-container{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 5rem;
+                filter: drop-shadow($shadow);
+                transition: $transition;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                .project-image{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    background-color: $greylight-color;
+                    clip-path: polygon(
+                        0 2em,
+                        2em 0,
+                        100% 0,
+                        100% 100%,
+                        0 100%
+                    );
+                    img{
+                        filter: grayscale(1);
+                        transform: scale(1);
+                        transition: $transition;
+                    }
+                }
+                .project-text{
+                    padding: 2rem;
+                    color: $greylight-color;
+                    background-color: white;
+                    clip-path: polygon(
+                        0 0,
+                        100% 0,
+                        100% calc(100% - 2em),
+                        calc(100% - 2em) 100%,
+                        0 100%
+                    );
+                    transition: $transition;
+                    h2{
+                        font-size: 2.5rem;
+                        margin-bottom: 1rem;
+                        transition: $transition;
+                    }
+                    .project-stacks{
+                        list-style: none;
+                        margin: 1rem 0;
+                        padding: 0;
+                        .stack-item{
+                            display: inline-block;
+                            margin-right: 1rem;
+                            position: relative;
+                            .stack-name{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, 0);
+                                background-color: $primary-color;
+                                color: white;
+                                padding: .5rem;
+                                border-radius: .5rem;
+                                box-shadow: $shadow;
+                                opacity: 0;
+                                z-index: 1;
+                                transition: $transition;
+                                &:before{
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    bottom: 100%;
+                                    left: 50%;
+                                    width: 0;
+                                    height: 0;
+                                    border-left: .5rem solid transparent;
+                                    border-right: .5rem solid transparent;
+                                    border-bottom: .5rem solid $primary-color;
+                                    transform: translate(-50%, 0);
+                                }
+                            }
+                            img{
+                                display: block;
+                                width: 5rem;
+                                height: 5rem;
+                                filter: grayscale(1);
+                                transition: $transition;
+                            }
+                            &:hover{
+                                .stack-name{
+                                    top: 100%;
+                                    opacity: 1;
+                                }
+                                img{
+                                    filter: grayscale(0);
+                                }                 
+                            }
+                        }
+                    }
+                }
+                .project-link{
+                    display: flex;
+                    justify-content: center;
+                    a{
+                        background-color: white;
+                        color: $greylight-color;
+                        text-decoration: none;
+                        display: block;
+                        padding: 1rem 2rem;
+                        margin-left: 2rem;
+                        border: 1px solid $greylight-color;
+                        position: relative;
+                        transition: $transition;
+                        &:first-child{
+                            margin-left: 0;
+                        }
+                        &:before{
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            border-top: 2rem solid $grey-color;
+                            border-right: 2rem solid transparent;
+                            opacity: 0;
+                            z-index: -1;
+                            transition: $transition;
+                        }
+                        &:after{
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            bottom: 50%;
+                            right: 50%;
+                            border-bottom: 2rem solid $grey-color;
+                            border-left: 2rem solid transparent;
+                            opacity: 0;
+                            z-index: -1;
+                            transition: $transition;
+                        }
+                        &:hover{
+                            color: white;
+                            background-color: $background-color;
+                            &:before{
+                                top: -.5rem;
+                                left: -.5rem;
+                                border-top-color: $secondary-color;
+                                opacity: 1;
+                                z-index: 1;
+                            }
+                            &:after{
+                                bottom: -.5rem;
+                                right: -.5rem;
+                                border-bottom-color: $secondary-color;
+                                opacity: 1;
+                                z-index: 1;
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    filter: drop-shadow($shadow-hover);
+                    .project-image img{
+                        filter: grayscale(0);
+                        transform: scale(1.15);
+                    }
+                    .project-text{
+                        color: $grey-color;
+                        h2{
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    section#projects{
+        .container-content{
+            .content{
+                .project-container{
+                    flex-direction: row;
+                    .project-image,
+                    .project-text{
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    section#projects{
+        .container-content{
+            .content{
+                .project-container{
+                    flex-direction: row;
+                    .project-image{
+                        width: 30%;
+                    }
+                    .project-text{
+                        width: 70%;
+                    }
+                    .project-link{
+                        justify-content: flex-end;
+                        a{
+                            &:last-child{
+                                margin-right: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
