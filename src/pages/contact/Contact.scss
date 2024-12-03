@@ -1,0 +1,149 @@
+@use '../../assets/css/variables.scss' as *;
+
+section#contact{
+    .container-content{
+        display: flex;
+        flex-direction: column;
+        .contact-form{
+            position: relative;
+            background-color: $primary-color;
+            width: 100%;
+            border:.5rem solid white;
+            &:before{
+                content: '';
+                position: absolute;
+                top: -1em;
+                left: -1em;
+                width: calc(100% + 2em);
+                height: calc(100% + 2em);
+                background-color: white;
+                clip-path: polygon(
+                    0 0,
+                    calc(100% - 60%) 0,
+                    100% 50%,
+                    100% 100%,
+                    50% 100%,
+                    0 calc(100% - 60%)
+                );
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 2rem;
+                background-color: $secondary-color;
+                position: relative;
+                .input-container{
+                    display: flex;
+                    gap: 2rem;
+                    margin: 1.5rem 0;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                    label{
+                        flex-grow: 1;
+                        position: relative;
+                        span{
+                            color: $grey-color;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            transform: translate(1rem, .25rem);
+                            transition: $transition;
+                        }
+                        textarea{
+                            height: 10rem;
+                        }
+                        input, textarea{
+                            width: 100%;
+                            color: $grey-color;
+                            flex-grow: 1;
+                            transition: $transition;
+                            &:focus{
+                                border-color: $background-color;
+                                outline: none;
+                                box-shadow: none;
+                                + span{
+                                    transform: translate(.5rem, -2.5rem);
+                                    color: white;
+                                }
+                            }
+                            &:not(:placeholder-shown){
+                                + span{
+                                    transform: translate(.5rem, -2.5rem);
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }   
+        }
+        .contact-content{
+            position: relative;
+            width: 100%;
+            order: -1;
+            background-color: white;
+            border:.5rem solid white;
+            padding: 2rem 4rem;
+            &:before{
+                content: '';
+                position: absolute;
+                top: -1em;
+                left: -1em;
+                width: calc(100% + 2em);
+                height: calc(100% + 2em);
+                background-color: white;
+                clip-path: polygon(
+                    0 0,
+                    100% 0,
+                    100% calc(100% - 60%),
+                    calc(100% - 60%) 100%,
+                    0 100%
+                );
+                z-index: -1;
+            }
+            hr{
+                margin: 1rem 0;
+                border: .1rem solid $primary-color;
+            }
+            .contact-item{
+                margin-bottom: 1rem;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                
+                a{
+                    font-size: 1.5rem;
+                    color: $primary-color;
+                    text-decoration: none;
+                    transition: $transition;
+                    &:hover{
+                        color: $secondary-color;
+                    }
+                    i{
+                        font-size: 2rem;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    section#contact{
+        .container-content{
+            flex-direction: row;
+            align-items: center;
+            .contact-form{
+                width: 50%;
+            }
+            .contact-content{
+                width: 50%;
+                order: 1;
+            }
+
+        }
+    }
+}
