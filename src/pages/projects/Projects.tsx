@@ -65,11 +65,11 @@ function linkProject(project: ProjectType){
 }
 
 function displayProjects() {
-  return projects.map(project => {
+  return projects.map((project, index) => {
     const stacks = stacksProject(project.stacks);
     const link = linkProject(project);
     return (
-      <div className="project-container">
+      <div className="project-container" key={index}>
         <div className="project-image">
           <img src={project.image} alt={project.title} />
         </div>

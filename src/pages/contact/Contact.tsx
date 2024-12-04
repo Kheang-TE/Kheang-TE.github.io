@@ -1,6 +1,8 @@
 import './Contact.scss';
+import emailjs from '@emailjs/browser';
+import { FormEvent, useRef, useState } from 'react';
+
 import contactItems from '../../assets/datas/contactItems';
-import { FormEvent, useState } from 'react';
 
 function contactLink(){
     return contactItems.map((item, index) => {
@@ -12,18 +14,35 @@ function contactLink(){
     });
 }
 
-function handleSubmit(e: FormEvent){
-    e.preventDefault();
-    const datas = new FormData(e.target as HTMLFormElement);
-    console.log(datas);
-}
-
 function Contact() {
 
     const [checked, setChecked] = useState(false);
 
     const toggleCheck = () => {
         setChecked(!checked);
+    }
+
+    const form = useRef<HTMLFormElement>(null);
+
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        const serviceId = "service_w7oqadc"
+        const templateId = "template_8cv057p"
+        const emailKey = "kF7V5US62v9tcw1Cg"
+        const formDatas = new FormData(form.current as HTMLFormElement);
+        const { firstname, lastname, email, phone, subject, message } = Object.fromEntries(formDatas.entries());
+        emailjs
+            .send(serviceId, templateId, { firstname, lastname, email, phone, subject, message }, emailKey)
+            .then((result) => {
+                console.log(result.text);
+                alert("Votre message a bien été envoyé. Je vous recontacte dès que possible.");
+                form.current?.reset();
+            })
+            .catch((error) => {
+                console.error(error.text);
+                alert("Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.");
+            });
+
     }
 
     return (
@@ -34,7 +53,7 @@ function Contact() {
                 </div>
                 <div className="container-content">
                     <div className="contact-form">
-                        <form onSubmit={handleSubmit}>
+                        <form ref={form} onSubmit={handleSubmit}>
                             <div className="input-container">
                                 <label>
                                     <input type="text" className="control-form" name="firstname" placeholder="" required />
