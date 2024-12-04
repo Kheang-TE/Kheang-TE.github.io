@@ -36,7 +36,7 @@ section#contact{
                 .input-container{
                     display: flex;
                     gap: 2rem;
-                    margin: 1.5rem 0;
+                    margin-top: 3rem;
                     &:last-child{
                         margin-bottom: 0;
                     }
@@ -48,21 +48,25 @@ section#contact{
                             position: absolute;
                             left: 0;
                             top: 0;
-                            transform: translate(1rem, .25rem);
+                            transform: translate(1rem, .1rem);
                             transition: $transition;
                         }
                         textarea{
                             height: 10rem;
                         }
-                        input, textarea{
+                        input[type="text"],
+                        input[type="email"],
+                        input[type="tel"],
+                        textarea{
                             width: 100%;
                             color: $grey-color;
                             flex-grow: 1;
+                            border-radius: 0;
+                            border: 2px solid white;
                             transition: $transition;
                             &:focus{
                                 border-color: $background-color;
                                 outline: none;
-                                box-shadow: none;
                                 + span{
                                     transform: translate(.5rem, -2.5rem);
                                     color: white;
@@ -73,6 +77,26 @@ section#contact{
                                     transform: translate(.5rem, -2.5rem);
                                     color: white;
                                 }
+                            }
+                        }
+                        input[type="checkbox"]{
+                            display: inline-block;
+                            margin-right: 1rem;
+                        }
+                    }
+                    button{
+                        background-color: $greylight-color;
+                        color: $grey-color;
+                        border: none;
+                        padding: 1rem 2rem;
+                        transition: $transition;
+                        &:not(:disabled){
+                            background-color: white;
+                            color: $grey-color;
+                            cursor: pointer;
+                            &:hover{
+                                color: white;
+                                background-color: $primary-color;
                             }
                         }
                     }

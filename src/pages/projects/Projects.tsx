@@ -1,6 +1,6 @@
 import './Projects.scss';
-import projects from '../../assets/json/datas.json';
-import icons from '../../assets/json/icons.json';
+import projects from '../../assets/datas/projects.json';
+import icons from '../../assets/datas/icons.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
 

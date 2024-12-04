@@ -1,25 +1,6 @@
 import './Contact.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faAt } from '@fortawesome/free-solid-svg-icons';
-const contactItems = [
-    {
-        "icon": <i><FontAwesomeIcon icon={faAt} /></i>,
-        "name": "kheang.te@live.fr",
-        "url": "kheang.te@live.fr"
-    },
-    {
-        "icon": <i><FontAwesomeIcon icon={faLinkedin} /></i>,
-        "name": "LinkedIn",
-        "url": "linkedin.com/in/kheang-te"
-    },
-    {
-        "icon": <i><FontAwesomeIcon icon={faGithub} /></i>,
-        "name": "GitHub",
-        "url": "github.com/kheangte"
-
-    }
-];
+import contactItems from '../../assets/datas/contactItems';
+import { FormEvent, useState } from 'react';
 
 function contactLink(){
     return contactItems.map((item, index) => {
@@ -31,7 +12,20 @@ function contactLink(){
     });
 }
 
+function handleSubmit(e: FormEvent){
+    e.preventDefault();
+    const datas = new FormData(e.target as HTMLFormElement);
+    console.log(datas);
+}
+
 function Contact() {
+
+    const [checked, setChecked] = useState(false);
+
+    const toggleCheck = () => {
+        setChecked(!checked);
+    }
+
     return (
         <section id="contact" className="backgroundColor">
             <div className="container">
@@ -40,7 +34,7 @@ function Contact() {
                 </div>
                 <div className="container-content">
                     <div className="contact-form">
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="input-container">
                                 <label>
                                     <input type="text" className="control-form" name="firstname" placeholder="" required />
@@ -74,14 +68,20 @@ function Contact() {
                                 </label>
                             </div>
                             <div className="input-container">
-                                <button type="submit">Envoyer</button>
+                                <label>
+                                    <input type="checkbox" name="" checked={checked} onChange={toggleCheck}/>
+                                    En cochant cette case, j'accepte que les informations renseignées soient utilisées dans le cadre d'une réponse ou d'être recontacté.
+                                </label>
+                            </div>
+                            <div className="input-container">
+                                <button type="submit" disabled={!checked}>Envoyer</button>
                             </div>
                         </form>
                     </div>
                     <div className="contact-content">
                         <span className="triangle_corner triangle_corner-tl"></span>
                         <p>
-                            Prenez contact avec moi pour discuter de votre projet, de vos attentes ou même échanger des idées. Je suis ouvert à de nombreuses formes de collaboration.
+                            N'hésitez pas à prendre contact pour discuter de votre projet, de vos attentes ou même échanger des idées. Je suis ouvert à de nombreuses formes de collaboration.
                         </p>
                         <hr />
                         {contactLink()}

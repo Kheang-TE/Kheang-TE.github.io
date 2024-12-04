@@ -1,42 +1,9 @@
-import MenuItem from "../../../components/MenuItem/MenuItem";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faHouse, faUser, faBriefcase, faDesktop, faEnvelope} from "@fortawesome/free-solid-svg-icons";
-import Footer from "../footer/Footer";
 import "./Header.scss";
+import menu from "../../../assets/datas/menu";
+import MenuItem from "../../../components/MenuItem/MenuItem";
+import Footer from "../footer/Footer";
 import { MouseEvent } from "react";
 
-const menu = [
-    {
-        id: 1,
-        title: "Accueil",
-        link: "#home",
-        icon: <i><FontAwesomeIcon icon={faHouse} /></i>
-    },
-    {
-        id: 2,
-        title: "A propos",
-        link: "#about",
-        icon: <i><FontAwesomeIcon icon={faUser} /></i>
-    },
-    {
-        id: 3,
-        title: "Compétences",
-        link: "#skills",
-        icon: <i><FontAwesomeIcon icon={faBriefcase} /></i>
-    },
-    {
-        id: 4,
-        title: "Projets",
-        link: "#projects",
-        icon: <i><FontAwesomeIcon icon={faDesktop} /></i>
-    },
-    {
-        id: 5,
-        title: "Contact",
-        link: "#contact",
-        icon: <i><FontAwesomeIcon icon={faEnvelope} /></i>
-    }
-];
 
 function activeNav(event: MouseEvent<HTMLButtonElement>): void{
     event.currentTarget?.classList.toggle("active");
