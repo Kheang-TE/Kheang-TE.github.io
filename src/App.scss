@@ -166,7 +166,7 @@ section{
     }
 }
 
-@media (min-width: 992px){
+@media (min-width: 1200px){
     #root{
         flex-direction: row;
     }
@@ -174,5 +174,7 @@ section{
         margin-left: 25rem;
         width: calc(100% - 25rem);
     }
-    
+    section{
+        padding: 6rem 12rem;
+    }
 }
