@@ -4,10 +4,7 @@ import {closeSidebar} from "../../pages/_partials/header/Header";
 
 function MenuItem({...props}) {
     return (
-        // <li className={props.link === '#home' ? 'active' : ''}>
-        //     <a href={props.link} onClick={toLink}>{props.icon}{props.children}<i><FontAwesomeIcon icon={faChevronRight} /></i></a>
-        // </li>
-        <li className={props.link === '#home' ? 'active' : ''}>
+        <li className={props.className}>
             <a href={props.link} onClick={toLink}>{props.icon}{props.children}<i><FontAwesomeIcon icon={faChevronRight} /></i></a>
         </li>
     )
