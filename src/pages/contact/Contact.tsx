@@ -1,8 +1,22 @@
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
-import { FormEvent, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import contactItems from '../../assets/datas/contactItems';
+
+const schema = z.object({
+    firstname: z.string({required_error: 'Un prénom est requis.'}).min(2,'Le prénom doit contenir au moins 2 caractères.'),
+    lastname: z.string({required_error: 'Un nom est requis.'}).min(2,'Le nom doit contenir au moins 2 caractères.'),
+    email: z.string({required_error: 'Une adresse email valide est requis.'}).email('Adresse email invalide.').regex(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,'Adresse email invalide.'),
+    phone: z.string({required_error: 'Un numéro de téléphone est requis.'}).length(10,'Numéro de téléphone invalide.').regex(/^[0-9]{10}$/,'Numéro de téléphone invalide.'),
+    subject: z.string({required_error: 'Un sujet est requis.'}).min(3,'Le sujet doit contenir au moins 5 caractères.'),
+    message: z.string({required_error: 'Un message est requis.'}).min(10,'Le message doit contenir au moins 10 caractères.')
+});
+
+type FormFields = z.infer<typeof schema>;
 
 function contactLink(){
     return contactItems.map((item, index) => {
@@ -24,13 +38,12 @@ function Contact() {
 
     const form = useRef<HTMLFormElement>(null);
 
-    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-        e.preventDefault();
+    const sendMail = async (datas: FormFields) => {
         const serviceId = "service_w7oqadc"
         const templateId = "template_8cv057p"
         const emailKey = "kF7V5US62v9tcw1Cg"
-        const formDatas = new FormData(form.current as HTMLFormElement);
-        const { firstname, lastname, email, phone, subject, message } = Object.fromEntries(formDatas.entries());
+        const { firstname, lastname, email, phone, subject, message } = datas;
+        console.log(datas);
         emailjs
             .send(serviceId, templateId, { firstname, lastname, email, phone, subject, message }, emailKey)
             .then((result) => {
@@ -38,11 +51,26 @@ function Contact() {
                 alert("Votre message a bien été envoyé. Je vous recontacte dès que possible.");
                 form.current?.reset();
             })
-            .catch((error) => {
-                console.error(error.text);
-                alert("Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.");
-            });
+    }
+    
+    const {
+        register,
+        handleSubmit,
+        setError,
+        formState:{errors, isSubmitting}
+    } = useForm<FormFields>({
+        resolver: zodResolver(schema)
+    });
 
+    const onSubmit: SubmitHandler<FormFields> = async (data) => {
+        try{
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            sendMail(data);
+        } catch(error){
+            setError("root",{
+                message: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard."
+            })
+        }
     }
 
     return (
@@ -53,37 +81,43 @@ function Contact() {
                 </div>
                 <div className="container-content">
                     <div className="contact-form">
-                        <form ref={form} onSubmit={handleSubmit}>
+                        <form ref={form} onSubmit={handleSubmit(onSubmit)}>
                             <div className="input-container">
                                 <label>
-                                    <input type="text" className="control-form" name="firstname" placeholder="" required />
+                                    <input {...register('firstname')} type="text" className="control-form" name="firstname" placeholder="" />
                                     <span>Nom</span>
+                                    {errors.firstname && (<div className="error">{errors.firstname.message}</div>)}
                                 </label>
                                 <label>
-                                    <input type="text" className="control-form" name="lastname" placeholder="" required />
+                                    <input {...register('lastname')} type="text" className="control-form" name="lastname" placeholder="" />
                                     <span>Prénom</span>
+                                    {errors.lastname && (<div className="error">{errors.lastname.message}</div>)}
                                 </label>
                             </div>
                             <div className="input-container">
                                 <label>
-                                    <input type="email" className="control-form"  name="email" placeholder="" required />
+                                    <input {...register('email')} type="email" className="control-form" name="email" placeholder="" />
                                     <span>Email</span>
+                                    {errors.email && (<div className="error">{errors.email.message}</div>)}
                                 </label>
                                 <label>
-                                    <input type="tel" className="control-form" name="phone" placeholder="" required />
+                                    <input {...register('phone')} type="tel" className="control-form" name="phone" placeholder="" />
                                     <span>Téléphone</span>
+                                    {errors.phone && (<div className="error">{errors.phone.message}</div>)}
                                 </label>
                             </div>
                             <div className="input-container">
                                 <label>
-                                    <input type="text" className="control-form"  name="subject" placeholder="" required />
+                                    <input {...register('subject')} type="text" className="control-form"  name="subject" placeholder="" />
                                     <span>Sujet</span>
+                                    {errors.subject && (<div className="error">{errors.subject.message}</div>)}
                                 </label>
                             </div>
                             <div className="input-container">
                                 <label>
-                                    <textarea name="message" placeholder="" required></textarea>
+                                    <textarea {...register('message')} name="message" placeholder="" ></textarea>
                                     <span>Message</span>
+                                    {errors.message && (<div className="error">{errors.message.message}</div>)}
                                 </label>
                             </div>
                             <div className="input-container">
@@ -93,8 +127,9 @@ function Contact() {
                                 </label>
                             </div>
                             <div className="input-container">
-                                <button type="submit" disabled={!checked}>Envoyer</button>
+                                <button type="submit" disabled={!checked}>{isSubmitting? "En cours d'envoi ..." : "Envoyer"}</button>
                             </div>
+                            {errors.root && (<div className="error">{errors.root.message}</div>)}
                         </form>
                     </div>
                     <div className="contact-content">
