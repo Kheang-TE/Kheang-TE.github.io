@@ -2,7 +2,7 @@ import "./Header.scss";
 import menu from "../../../assets/datas/menu";
 import MenuItem from "../../../components/MenuItem/MenuItem";
 import Footer from "../footer/Footer";
-import { MouseEvent, useEffect, useState } from "react";
+import { MouseEvent, useState } from "react";
 
 
 function activeNav(event: MouseEvent<HTMLButtonElement>): void{

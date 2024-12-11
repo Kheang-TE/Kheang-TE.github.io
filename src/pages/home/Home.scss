@@ -81,14 +81,52 @@ section#home{
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+        .contact{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            padding-top: 2rem;
+            margin: 0;
+            margin-top: 2rem;
+            border-top: 1px solid $greylight-color;
+            li{
+                margin-right: 2rem;
+                &:last-child{
+                    margin-right: 0;
+                    a{
+                        background-color: $background-color;
+                        padding: 0.5rem 1rem;
+                        border: 1px solid white;
+                        &:hover{
+                            color: white;
+                            background-color: $secondary-color;
+                        }
+                        i{
+                            font-size: 1.5rem;
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+                a{
+                    display: block;
+                    color: white;
+                    background-color: none;
+                    font-weight: 500;
+                    text-decoration: none;
+                    transition: $transition;
+                    &:hover{
+                        color: $secondary-color;
+                    }
+                    i{
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
     }
 }
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {}
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {

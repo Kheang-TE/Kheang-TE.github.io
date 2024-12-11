@@ -10,7 +10,7 @@
   {
       "title": "GT Habitat",
       "image": "./img/projets/gt_habitat.png",
-      "description": "Site vitrine d'un maître d'oeuvre. Le site est réalisé avec Wordpress et un thème totalement personnalisé. Le site est également optimisé pour le référencement naturel.",
+      "description": "Site vitrine d'un maître d'oeuvre avec Wordpress. Le site est réalisé avec Wordpress et un thème totalement personnalisé. Le site est également optimisé pour le référencement naturel.",
       "stacks": ["Wordpress", "PHP", "CSS"],
       "status": "online",
       "url":  "https://gt-habitat.fr/"
@@ -18,7 +18,7 @@
     {
       "title": "Unity Manager",
       "image": "./img/projets/unity_manager.png",
-      "description": "Application de gestion de projet. Il permet de gérer les projets sous forme de tâches, modèle Kanban. Un système de tchat est également intégré pour faciliter la communication entre les membres de l'équipe.",
+      "description": "Application de gestion de projet. Il permet de gérer les projets sous forme de tâches, modèle Kanban. L'application intégre des fonctionnalités tels que : l'inscription, l'authentification et un système de tchat pour faciliter la communication entre les membres de l'équipe.",
       "stacks": ["NodeJS", "Express", "PostgreSQL", "MongoDB", "VueJS", "Bootstrap", "CSS"],
       "status": "done",
       "url": [
@@ -33,9 +33,17 @@
       ]
     },
     {
+      "title": "Portfolio",
+      "image": "./img/projets/portfolio.png",
+      "description": "Portfolio personnel réalisé avec React et Sass afin de gagner en compétences et pour découvrir de nouvelles technologies.",
+      "stacks": ["React", "Sass"],
+      "status": "online",
+      "url":  "https://kheang-te.github.io/"
+    },
+    {
       "title": "Sarang",
       "image": "./img/projets/sarang.png",
-      "description": "Application de notation de films ou séries asiatiques, avec la possibilité de les commenter.",
+      "description": "Application de notation de films et de séries asiatiques, avec la possibilité d'y laisser les commenter. Utilisation d'une API externe pour les données de la vidéothèque.",
       "stacks":["NodeJS", "NestJS", "PostgreSQL", "Angular", "Bootstrap", "Sass"],
       "status": "in_progress",
       "url": null

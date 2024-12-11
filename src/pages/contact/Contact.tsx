@@ -6,6 +6,8 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import contactItems from '../../assets/datas/contactItems';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 const schema = z.object({
     firstname: z.string({required_error: 'Un prénom est requis.'}).min(2,'Le prénom doit contenir au moins 2 caractères.'),
@@ -138,6 +140,9 @@ function Contact() {
                             N'hésitez pas à prendre contact pour discuter de votre projet, de vos attentes ou même échanger des idées. Je suis ouvert à de nombreuses formes de collaboration.
                         </p>
                         <hr />
+                        <div className="contact-item">
+                            <a href="./CV_Kheang_Developpeur_Web_Applications_fr.pdf" target="_blank" rel="noreferrer" title="CV"><i><FontAwesomeIcon icon={faFilePdf}/></i>CV</a>
+                        </div>
                         {contactLink()}
                         <span className="triangle_corner triangle_corner-br"></span>
                     </div>
