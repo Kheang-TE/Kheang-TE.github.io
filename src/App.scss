@@ -30,7 +30,7 @@ p{
         top: 0;
         width: 100%;
         height: 100%;
-        background-image: url('./assets/img/background_pattern.webp');
+        background-image: url('./img/background_pattern.webp');
         background-position: center;
         background-repeat: repeat;
         background-size: 5%;
@@ -163,6 +163,26 @@ section{
         right: 1rem;
         border-right: 2rem solid $secondary-color;
         border-top: 2rem solid transparent;
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        font-size: 1.4rem;
+    }
+    section{
+        padding: 6rem 0;
+        &:first-child{
+            padding: 0;
+        }
+        .title-container{
+            h1.title-content{font-size: 2.6rem;}
+        }
+        .container-content{
+            .content{
+                padding: 0 2rem;
+            }
+        }
     }
 }
 

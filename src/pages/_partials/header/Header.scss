@@ -5,11 +5,11 @@ header{
     .btn_nav{
         position: fixed;
         display: block;
-        width: 2.5rem;
+        width: 4rem;
         height: 4rem;
         top: 2rem;
         left: 2rem;
-        background: none;
+        background: rgba(255,255,255,.7);
         border: none;
         cursor: pointer;
         z-index: 1000;
@@ -19,7 +19,7 @@ header{
             height: .2rem;
             width: 2.5rem;
             top: 1rem;
-            left: 0;
+            left: .75rem;
             border-radius:.2rem;
             opacity: 1;
             background-color: $primary-color;
@@ -32,6 +32,7 @@ header{
             }
         }
         &.active{
+            background: none;
             span{
                 background-color: $light-font-color;
                 &:nth-child(1){
@@ -71,7 +72,7 @@ header{
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('../../../assets/img/background_nav_pattern.webp');
+            background-image: url('./img/background_nav_pattern.webp');
             background-size: 10%;
             z-index: -1;
             opacity: .2;

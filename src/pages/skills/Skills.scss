@@ -51,6 +51,13 @@ section#skills{
             &.active{
                 display: block;
             }
+            ul{
+                margin-top: 2rem;
+                list-style: square;
+                li{
+                    margin-bottom: 1rem;
+                }
+            }
         }
         &:before{
             content: '';
