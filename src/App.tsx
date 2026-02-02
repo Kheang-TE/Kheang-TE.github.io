@@ -1,20 +1,19 @@
-import "./App.scss"
-import Header from "./pages/_partials/header/Header"
-import { About, BackToTop, Contact, Divider, Home, Skills, Projects } from "./pages"
+import "./App.scss";
+import { MainLayout } from "./layout";
+import { Home, About, Skills, Projects, Contact } from "./sections";
+import { Divider } from "./components";
 
 function App() {
-  return <>
-    <Header />
-    <main>
+  return (
+    <MainLayout>
       <Home />
       <About />
       <Skills />
       <Divider />
       <Projects />
       <Contact />
-    </main>
-    <BackToTop />
-  </>
+    </MainLayout>
+  );
 }
 
-export default App
+export default App;

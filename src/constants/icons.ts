@@ -1,0 +1,19 @@
+import type { IconsMap } from '../types';
+
+const icons: IconsMap = {
+    angular: "./img/icons/angularjs.png",
+    bootstrap: "./img/icons/bootstrap.png",
+    css: "./img/icons/css3.png",
+    express: "./img/icons/express-js.png",
+    mongodb: "./img/icons/mongo-db.png",
+    nestjs: "./img/icons/nestjs.png",
+    nodejs: "./img/icons/nodejs.png",
+    php: "./img/icons/php.png",
+    postgresql: "./img/icons/postgresql.png",
+    react: "./img/icons/react.png",
+    sass: "./img/icons/sass.png",
+    vuejs: "./img/icons/vuejs.png",
+    wordpress: "./img/icons/wordpress.png"
+};
+
+export default icons;

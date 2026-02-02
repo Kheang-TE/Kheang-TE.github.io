@@ -1,0 +1,180 @@
+@use '../../assets/styles/variables.scss' as *;
+
+section#home{
+    .container{
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 12rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        padding: 2rem;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('/img/japan-background-digital-art.jpg');
+            background-size: cover;
+            mask-image: linear-gradient(to right, transparent 0, white 10%, white 90%, transparent 100%);
+        }
+    }
+    .container_content{
+        background-color: $background-color;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        clip-path: polygon(
+            0 2em,
+            2em 0,
+            100% 0,
+            100% calc(100% - 2em),
+            calc(100% - 2em) 100%,
+            0% 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            background-color: $secondary-color;
+            top: 1rem;
+            right: 1rem;
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%
+            );
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            background-color: $secondary-color;
+            bottom: 1rem;
+            left: 1rem;
+            clip-path: polygon(
+                0 0,
+                0 100%,
+                100% 100%
+            );
+        }
+        h1{
+            color: white;
+            font-size: 3rem;
+            text-transform: capitalize;
+            margin-bottom: 1rem;
+            &:before,&:after{
+                display: none;
+            }
+        }
+        p{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .contact{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            padding-top: 2rem;
+            margin: 0;
+            margin-top: 2rem;
+            border-top: 1px solid $greylight-color;
+            li{
+                margin-right: 2rem;
+                &:last-child{
+                    margin-right: 0;
+                    a{
+                        background-color: $background-color;
+                        padding: 0.5rem 1rem;
+                        border: 1px solid white;
+                        &:hover{
+                            color: white;
+                            background-color: $secondary-color;
+                        }
+                        i{
+                            font-size: 1.5rem;
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+                a{
+                    display: block;
+                    color: white;
+                    background-color: none;
+                    font-weight: 500;
+                    text-decoration: none;
+                    transition: $transition;
+                    &:hover{
+                        color: $secondary-color;
+                    }
+                    i{
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    section#home{
+        .container{
+            align-items: center;
+        }
+        .container_content{
+            width: 100%;
+        }
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    section#home{
+        .container{
+            flex-direction: column;
+            justify-content: center;
+            align-items: end;
+            padding: 3rem;
+        }
+        .container_content{
+            padding: 3rem;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;    
+            position: relative;
+            h1{
+                margin-bottom: 2rem;
+            }
+            p{
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    section#home{
+        .container_content{
+            h1{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 2rem;
+            }
+        }
+    }
+}
