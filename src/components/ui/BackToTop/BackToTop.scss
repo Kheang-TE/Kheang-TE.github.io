@@ -4,81 +4,63 @@
     position: fixed;
     font-size: 75%;
     text-align: center;
-    bottom: 1em;
-    right: .5em;
+    bottom: 2rem;
+    right: 1rem;
     cursor: pointer;
     scroll-behavior: smooth;
     transition: $transition;
+    z-index: 100;
+    
     button{
         text-decoration: none;
         text-align: center;
-        border: none;
-        background: none;
-        width: 5rem;
-        opacity: .75;
+        border: 1px solid rgba($accent-color, 0.3);
+        background: rgba($dark-bg, 0.9);
+        padding: 1rem;
+        opacity: .85;
+        transition: $transition;
+        clip-path: polygon(
+            0 0.5rem,
+            0.5rem 0,
+            100% 0,
+            100% calc(100% - 0.5rem),
+            calc(100% - 0.5rem) 100%,
+            0 100%
+        );
+        
         i{
-            font-size: 1.8em;
-            color: $greylight-color;
+            font-size: 2rem;
+            color: $accent-color;
             position: relative;
             animation: scroll-up-animation 1s infinite;
             transition: $transition;
+            display: block;
+            margin-bottom: 0.5rem;
         }
+        
         span{
             display: block;
-            font-size: 0.8em;
-            font-weight: 700;
+            font-size: 1rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
             text-transform: uppercase;
-            color: white;
-            background-color: $greylight-color;
-            padding: 0.2em 0.5em;
+            letter-spacing: 0.1em;
+            color: $greylight-color;
             transition: $transition;
-            position: relative;
-            &:before{
-                content: '';
-                position: absolute;
-                width: 2rem;
-                height: 2rem;
-                top: 50%;
-                left: 50%;
-                opacity: 0;
-                border-top: 2rem solid $greylight-color;
-                border-right: 2rem solid transparent;
-                transition: $transition;
-                z-index: -1;
-            }
-            &:after{
-                content: '';
-                position: absolute;
-                width: 2rem;
-                height: 2rem;
-                bottom: 50%;
-                right: 50%;
-                opacity: 0;
-                border-bottom: 2rem solid $greylight-color;
-                border-left: 2rem solid transparent;
-                transition: $transition;
-                z-index: -1;
-            }
         }
+        
         &:hover{
             opacity: 1;
+            border-color: $accent-color;
+            box-shadow: 0 0 20px rgba($accent-color, 0.4);
+            
             i{
-                color: $secondary-color;
+                color: $accent-color;
+                filter: drop-shadow(0 0 5px $accent-color);
             }
+            
             span{
-                background-color: $secondary-color;
-                &:before{
-                    top: -.65rem;
-                    left: -.65rem;
-                    opacity: 1;
-                    border-top: 2rem solid $primary-color;
-                }
-                &:after{
-                    bottom: -.65rem;
-                    right: -.65rem;
-                    opacity: 1;
-                    border-bottom: 2rem solid $primary-color;
-                }
+                color: $accent-color;
             }
         }
     }
@@ -87,20 +69,19 @@
 @media (min-width: 1200px){
     .backToTop{
         font-size: 100%;
-        button{
-            width: auto;
-        }
+        bottom: 3rem;
+        right: 2rem;
     }
 }
 
 @keyframes scroll-up-animation {
     0% {
-      top: 0;
+      transform: translateY(0);
     }
     50% {
-      top: 5px;
+      transform: translateY(-5px);
     }
     100% {
-      top: 0;
+      transform: translateY(0);
     }
 }

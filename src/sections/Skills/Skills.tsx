@@ -44,7 +44,6 @@ function Skills() {
                     <li>SASS</li>
                     <li>JavaScript</li>
                     <li>Vue.js</li>
-                    <li>Angular</li>
                     <li>React</li>
                   </ul>
                 </div>

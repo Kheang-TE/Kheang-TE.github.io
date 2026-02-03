@@ -1,6 +1,27 @@
 @use '../../assets/styles/variables.scss' as *;
 
 section#home{
+    &:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url('/img/japan-background-digital-art.jpg');
+        background-size: cover;
+        mask-image: linear-gradient(to right, transparent 0, white 10%, white 90%, transparent 100%);
+    }
+    // Overlay cyberpunk
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
     .container{
         position: relative;
         width: 100%;
@@ -10,24 +31,14 @@ section#home{
         justify-content: end;
         align-items: end;
         padding: 2rem;
-        &:before{
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-image: url('/img/japan-background-digital-art.jpg');
-            background-size: cover;
-            mask-image: linear-gradient(to right, transparent 0, white 10%, white 90%, transparent 100%);
-        }
     }
     .container_content{
-        background-color: $background-color;
-        color: white;
+        background: linear-gradient(135deg, rgba($dark-bg, 0.95) 0%, rgba($dark-bg, 0.85) 100%);
+        color: $white-color;
         text-align: center;
         padding: 2rem;
         width: 100%;
+        border: 1px solid rgba($accent-color, 0.3);
         clip-path: polygon(
             0 2em,
             2em 0,
@@ -40,46 +51,55 @@ section#home{
         flex-direction: column;
         justify-content: flex-end; 
         position: relative;
+        z-index: 1;
+        box-shadow: 
+            0 0 30px rgba($dark-bg, 0.8),
+            inset 0 0 30px rgba($accent-color, 0.05);
+        
+        // Coin supérieur droit
         &:before{
             content: '';
             position: absolute;
-            width: 1rem;
-            height: 1rem;
-            background-color: $secondary-color;
+            width: 3rem;
+            height: 3rem;
             top: 1rem;
             right: 1rem;
-            clip-path: polygon(
-                0 0,
-                100% 0,
-                100% 100%
-            );
+            border-right: 2px solid $accent-color;
+            border-top: 2px solid $accent-color;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            filter: drop-shadow(0 0 5px $accent-color);
         }
+        // Coin inférieur gauche
         &:after{
             content: '';
             position: absolute;
-            width: 1rem;
-            height: 1rem;
-            background-color: $secondary-color;
+            width: 3rem;
+            height: 3rem;
             bottom: 1rem;
             left: 1rem;
-            clip-path: polygon(
-                0 0,
-                0 100%,
-                100% 100%
-            );
+            border-left: 2px solid $accent-color;
+            border-bottom: 2px solid $accent-color;
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+            filter: drop-shadow(0 0 5px $accent-color);
         }
         h1{
-            color: white;
+            color: $white-color;
+            font-family: 'Orbitron', sans-serif;
             font-size: 3rem;
-            text-transform: capitalize;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
             margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba($accent-color, 0.5);
             &:before,&:after{
                 display: none;
             }
         }
         p{
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
+            color: $greylight-color;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 0.05em;
         }
         .contact{
             display: flex;
@@ -90,18 +110,27 @@ section#home{
             padding-top: 2rem;
             margin: 0;
             margin-top: 2rem;
-            border-top: 1px solid $greylight-color;
+            border-top: 1px solid rgba($accent-color, 0.3);
             li{
                 margin-right: 2rem;
                 &:last-child{
                     margin-right: 0;
                     a{
-                        background-color: $background-color;
-                        padding: 0.5rem 1rem;
-                        border: 1px solid white;
+                        background: linear-gradient(135deg, rgba($accent-color, 0.2) 0%, rgba($dark-bg, 0.9) 100%);
+                        border: 1px solid $accent-color;
+                        padding: 0.8rem 1.5rem;
+                        clip-path: polygon(
+                            0 0.5rem,
+                            0.5rem 0,
+                            100% 0,
+                            100% calc(100% - 0.5rem),
+                            calc(100% - 0.5rem) 100%,
+                            0 100%
+                        );
                         &:hover{
-                            color: white;
-                            background-color: $secondary-color;
+                            color: $white-color;
+                            background: $accent-color;
+                            box-shadow: 0 0 15px rgba($accent-color, 0.5);
                         }
                         i{
                             font-size: 1.5rem;
@@ -111,13 +140,14 @@ section#home{
                 }
                 a{
                     display: block;
-                    color: white;
-                    background-color: none;
+                    color: $greylight-color;
+                    background-color: transparent;
                     font-weight: 500;
                     text-decoration: none;
                     transition: $transition;
                     &:hover{
-                        color: $secondary-color;
+                        color: $accent-color;
+                        filter: drop-shadow(0 0 5px rgba($accent-color, 0.5));
                     }
                     i{
                         font-size: 3rem;

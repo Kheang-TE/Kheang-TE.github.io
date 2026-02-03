@@ -1,15 +1,35 @@
-$font: sans-serif;
-$primary-color: #1A516D;
-$secondary-color: #E5CB9B;
-$greylight-color: #c0bfbd;
-$grey-color: #7f7f7f;
+$font: 'Rajdhani', 'Orbitron', sans-serif;
 
-$light-font-color: #ABCBCE;
-$dark-font-color: #777778;
+// Palette Cyberpunk
+$dark-bg: #1c222e;
+$light-bg: #447584;
+$accent-color: #ef7963;      // Saumon - H2
+$secondary-color: #447584;   // Bleu - H3
+$grey-color: #777778;        // Texte corps
+$white-color: #ffffff;       // Texte sur fond sombre
+$greylight-color: #a0a0a0;
 
-$background-color: rgba(14,76,106,.75);
+// Couleurs néon pour effets cyberpunk
+$neon-cyan: #00f0ff;
+$neon-pink: #ff00ff;
+$neon-orange: #ef7963;
 
-$shadow: 0 0 1rem rgba($primary-color, .5);
-$shadow-hover: 0 0 1rem rgba($primary-color, 1);
+// Dégradé principal
+$gradient-bg: linear-gradient(135deg, $dark-bg 0%, $light-bg 100%);
+$gradient-bg-vertical: linear-gradient(180deg, $dark-bg 0%, $light-bg 100%);
+
+// Anciennes variables conservées pour compatibilité
+$primary-color: $light-bg;
+$light-font-color: $white-color;
+$dark-font-color: $grey-color;
+$background-color: rgba($dark-bg, .9);
+
+// Effets
+$shadow: 0 0 1.5rem rgba($neon-cyan, .3);
+$shadow-hover: 0 0 2rem rgba($neon-cyan, .6);
+$shadow-neon: 0 0 1rem rgba($accent-color, .5), 0 0 2rem rgba($accent-color, .3);
+$glow-cyan: 0 0 10px $neon-cyan, 0 0 20px $neon-cyan, 0 0 30px $neon-cyan;
+$glow-accent: 0 0 10px $accent-color, 0 0 20px $accent-color;
 
 $transition: all .3s ease-in-out;
+$transition-fast: all .15s ease-in-out;
