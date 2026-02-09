@@ -16,7 +16,7 @@ function StacksProject({ stacks }: { stacks: string[] }) {
           return (
             <li className="stack-item" key={index}>
               <img src={typedIcons[stackKey]} alt={stack} />
-              <div className="stack-name">{stack}</div>
+              <div className="stack-name">{stack.replace('_', ' ')}</div>
             </li>
           );
         }

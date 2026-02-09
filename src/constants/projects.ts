@@ -4,10 +4,18 @@ const projects: Project[] = [
   {
     title: "GT Habitat",
     image: "./img/projets/gt_habitat.png",
-    description: "Site vitrine d'un maître d'oeuvre avec Wordpress. Le site est réalisé avec Wordpress et un thème totalement personnalisé. Le site est également optimisé pour le référencement naturel.",
+    description: "Site vitrine d'un maître d'oeuvre. Le site est réalisé avec Wordpress et un thème totalement personnalisé. Il est également optimisé pour le référencement naturel.",
     stacks: ["Wordpress", "PHP", "CSS"],
     status: "online",
     url: "https://gt-habitat.fr/"
+  },
+  {
+    title: "NOVATIO HOME",
+    image: "./img/projets/novatio_home.png",
+    description: "Site vitrine responsive pour une société de menuiserie. Le site est réalisé avec WordPress et un thème sur mesure, entièrement personnalisé. Il est également optimisé pour le référencement naturel.",
+    stacks: ["Wordpress", "PHP", "CSS"],
+    status: "online",
+    url: "https://www.novatiohome.fr/"
   },
   {
     title: "Unity Manager",
@@ -27,27 +35,10 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "Chat-App",
-    image: "./img/projets/chat_app.png",
-    description: "Application de chat réalisée avec Node.js, React et WebSocket pour l’interactivité. L’évolution de ce projet est envisagé.",
-    stacks: ["NodeJS", "Express", "React", "WebSocket", "TailwindCSS", "MongoDB", "Cloudinary"],
-    status: "done",
-    url: [
-      {
-        url_name: "Front-end",
-        url_link: "https://gitlab.com/dev.kheang.te/chat-app-frontend"
-      },
-      {
-        url_name: "Back-end",
-        url_link: "https://gitlab.com/dev.kheang.te/chat-app-backend"
-      }
-    ]
-  },
-  {
     title: "Pokegame",
     image: "./img/projets/pokegame.png",
     description: "Application mobile basé sur la célèbre licence Pokemon. Le Pokedex est la seule fonctionnalité implémentée pour le moment, avec la possibilité de rechercher des Pokémon et d'afficher leurs informations détaillées.",
-    stacks: ["React Native", "Expo", "TypeScript", "CSS"],
+    stacks: ["React_Native", "Expo", "TypeScript", "CSS"],
     status: "done",
     url:[
         {
