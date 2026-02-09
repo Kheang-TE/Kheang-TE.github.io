@@ -3,7 +3,7 @@ import menuItems from '../../constants/menuItems';
 import MenuItem from '../../components/navigation/MenuItem/MenuItem';
 import Footer from '../Footer/Footer';
 import { useScrollPosition } from '../../hooks';
-import { MouseEvent, useCallback } from "react";
+import { MouseEvent } from "react";
 
 function activeNav(event: MouseEvent<HTMLButtonElement>): void {
     event.currentTarget?.classList.toggle("active");
